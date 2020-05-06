@@ -5,6 +5,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 https://crwn-clothing-tafir.herokuapp.com/
 
 Unfortunately the project is not configured to be displayed properly on mobile (yet).
+
+<br />
+
 This is not an actual shop, the prices aren't real and the Stripe integration is merely my attempt to explore Stripe's API. I don't store any of the "payment" data, however I still strongly advise anyone against using any payment details apart from the Stripe test cards.
 
 ## Available Scripts
