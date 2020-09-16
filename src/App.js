@@ -15,15 +15,7 @@ import {setCurrentUser} from './redux/user/user.actions';
 import {selectCurrentUser} from './redux/user/user.selectors'
 import {selectCollectionsForPreview} from './redux/shop/shop.selectors'
 
-class App extends React.Component {
-
-  unsubsribeFromAuth = null;
-
-  componentWillUnmount(){
-    this.unsubsribeFromAuth();
-  }
-
-  render(){
+const App = () => {
     return(
       <div className="App">
         <BrowserRouter>
@@ -37,7 +29,6 @@ class App extends React.Component {
         </BrowserRouter>
       </div>
   );
-  }
 }
 
 const mapStateToProps = createStructuredSelector({
