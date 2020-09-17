@@ -11,11 +11,17 @@ import CheckoutPage from './pages/checkout/checkout.component';
 
 import Header from './components/header/header.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
-import {setCurrentUser} from './redux/user/user.actions';
 import {selectCurrentUser} from './redux/user/user.selectors'
 import {selectCollectionsForPreview} from './redux/shop/shop.selectors'
 
-const App = () => {
+class App extends React.Component {
+  unsubscribeFromAuth = null;
+
+  componentWillUnmount() {
+    this.unsubscribeFromAuth();
+  }
+
+  render() {
     return(
       <div className="App">
         <BrowserRouter>
@@ -28,16 +34,13 @@ const App = () => {
           </Switch>
         </BrowserRouter>
       </div>
-  );
+    );
+  }
 }
-
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
   collectionsArray: selectCollectionsForPreview
 })
 
-const mapDispatchToProps = dispatch => ({
-  setCurrentUser: user => dispatch(setCurrentUser(user))
-})
+export default connect(mapStateToProps)(App);
 
-export default connect(mapStateToProps, mapDispatchToProps )(App);
