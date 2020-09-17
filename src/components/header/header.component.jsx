@@ -21,7 +21,7 @@ const Header = ({currentUser, hidden, signOutStart}) => (
             <Link className='option' to='/shop'> Contact</Link>
             {
             currentUser
-            ? <Link className='option' onClick = {signOutStart}> Sign Out </Link>
+            ? <Link className='option' to='/' onClick = {signOutStart}> Sign Out </Link>
             : <Link className='option' to='/signin'>Sign In</Link>
         }
             <CartIcon />
