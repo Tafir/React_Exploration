@@ -48,4 +48,4 @@ const mapDispatchToProps = dispatch => ({
     emailSignInStart: (email, password) => dispatch(emailSignInStart({ email, password }))
   });
   
-  export default connect(null,mapDispatchToProps)(SignIn);
+export default connect(null,mapDispatchToProps)(SignIn);
