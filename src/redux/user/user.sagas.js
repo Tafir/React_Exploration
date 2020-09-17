@@ -79,7 +79,7 @@ export function* signInAfterSignUp({payload: {user, additionalData}}) {
 }
 
 export function* onSignUpSuccess() {
-    yield takeLatest(UserActionTypes.signUpSuccess, signInAfterSignUp)
+    yield takeLatest(UserActionTypes.SIGN_UP_SUCCESS, signInAfterSignUp)
 }
 
 export function* signUp({payload: {email, password, displayName}}) {
@@ -100,6 +100,8 @@ export function* userSagas() {
         call(onGoogleSignInStart),
         call(onEmailSignInStart),
         call(onCheckUserSession),
-        call(onSignOutStart)
+        call(onSignOutStart),
+        call(onSignUpStart),
+        call(onSignUpSuccess)
     ]);
 }
